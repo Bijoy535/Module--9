@@ -8,15 +8,42 @@
 </head>
 
 <body>
+
+    <h1 id="myData">
+
+    </h1>
+
+
+
+
     <script>
-        getProductListFromBackEnd() ;
+        getProductListFromBackEnd();
         async function getProductListFromBackEnd() {
-            let URL = "http://164.68.107.70:6060/api/v1/ReadProduct"
-            await fetch(URL)
+            try {
+
+                let myData = document.getElementById("myData")
+                myData.innerText = "Loading......."
+
+
+
+                let URL = "http://164.680.107.70:6060/api/v1/ReadProduct"
+                let res = await fetch(URL)
+                let data = await res.json()
+
+
+                myData.innerText = JSON.stringify(data)
+
+
+
+
+            } catch(error) {
+                 let myData = document.getElementById("myData")
+                myData.innerText = "Somting is worng"
+                console.log(error)
+
+
+            }
         }
-
-
-
 
     </script>
 

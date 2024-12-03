@@ -9,11 +9,7 @@
 
 <body>
 
-    <h1 id="myData">
-
-    </h1>
-
-
+    
 
 
     <script>
@@ -21,12 +17,14 @@
         async function getProductListFromBackEnd() {
             try {
 
+                
+
                 let myData = document.getElementById("myData")
                 myData.innerText = "Loading......."
 
 
 
-                let URL = "http://164.680.107.70:6060/api/v1/ReadProduct"
+                let URL = "http://164.68.107.70:6060/api/v1/ReadProduct"
                 let res = await fetch(URL)
                 let data = await res.json()
 
